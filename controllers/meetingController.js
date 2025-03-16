@@ -22,7 +22,7 @@ import { verifyToken, protect } from '../middleware/authMiddleware.js';
       }
   
       const meetings = await Meeting.find({ user: req.user.id })
-        .sort({ date: -1 }); // ✅ Ascending order (oldest first)
+        .sort({ date: 1 }); 
   
       res.status(200).json(meetings);
     } catch (error) {
